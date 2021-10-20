@@ -1,0 +1,36 @@
+RUNNR   19                             number of run
+EVTNR   1                              number of first shower event
+SEED    100   0   0                      seed for 1. random number sequence
+SEED    200   0   0                      seed for 2. random number sequence
+SEED    300   0   0                      seed for 3. random number sequence
+NSHOW   1                              number of showers to generate
+PRMPAR  14                             particle type of prim. particle
+ESLOPE  -1                             slope of primary energy spectrum
+ERANGE  1.E6 1.E6                      energy range of primary particle
+THETAP  0.   0.                        range of zenith angle (degree)
+PHIP    0.   360.                      range of azimuth angle (degree)
+FIXCHI  0.                             starting altitude (g/cm**2)
+FIXHEI  0.   0                         first interaction height & target
+QGSJET  T  0                           use DPMJET for high energy hadrons
+QGSSIG  T                              use DPMJET hadronic cross sections
+HADFLG  0  0  0  0  0  2               flags hadr.interact.&fragmentation
+ELMFLG  T   T                          em. interaction flags (NKG,EGS)
+*THIN    1.e-4  1.e7  300.
+STEPFC  1.0                            mult. scattering step length fact.
+RADNKG  200.E2                         outer radius for NKG lat.dens.distr.
+MAGNET  20.0  42.8                     magnetic field centr. Europe
+ECUTS   0.3  0.3  0.003  0.003         energy cuts for particles
+LONGI   T  20.  T  T                   longit.distr. & step size & fit & out
+VOLHEI  1.E4                           height of the simulated volume
+MUMULT  F                              muon multiple scattering angle
+MUADDI  T                              additional info for muons
+OBSLEV  0.E0                           observation level (in cm)
+*ARRANG  0.                             rotation of array to north
+MAXPRT  100                            max. number of printed events
+ECTMAP  1.E9                           cut on gamma factor for printout
+DATBAS  F                              write .dbase file
+DEBUG   F  6  F  1000000               debug flag and log.unit for out
+DIRECT  ./                             output directory
+USER    gabinder                       user 
+EXIT                                   terminates input
+

@@ -1,0 +1,935 @@
+5921,5923c5921,5923
+<       DATA COMPOS / 0.78479D0, 0.21052D0, 0.00469D0 /
+<       DATA PROBTA / 0.78479D0, 0.99531D0, 1.D0      /
+<       DATA AVERAW / 14.543D0 /
+---
+>       DATA COMPOS / 0.66667D0, 0.33333D0, 0.D0      /
+>       DATA PROBTA / 0.66667D0, 1.D0,      1.D0      /
+>       DATA AVERAW / 6.00509D0 /
+6045,6063c6045,6056
+<      * /     -5779.5D2 ,   4.D5  ,      1.D6  ,     4.D6,   1.D7     /
+<       DATA ((HLAY0(I,J),I=1,5),J=0,16)
+<      * /     -5779.5D2 ,   4.D5  ,      1.D6  ,     4.D6 ,  1.D7     ,
+<      *       -5779.5D2 ,   4.D5  ,      1.D6  ,     4.D6 ,  1.D7     ,
+<      *       -5.D5  , 2.66667D5  , 5.33333D5  ,     8.D5 ,  1.D7     ,!SPolJan
+<      *       -5.D5  , 6.66667D5  ,13.33333D5  ,    20.D5 ,  1.D7     ,!SPolAug
+<      *       -5.D5  ,     7.0D5  ,    11.4D5  ,    37.0D5,  1.D7     ,!US
+<      *       -5779.5D2,   9.4D5  ,    15.3D5  ,    31.6D5,  1.D7     ,!Jan
+<      *       -5779.5D2,   9.2D5  ,    15.4D5  ,    31.0D5,  1.D7     ,!Feb
+<      *       -5779.5D2,   9.6D5  ,    15.2D5  ,    30.7D5,  1.D7     ,!March
+<      *       -5779.5D2,  10.0D5  ,    14.9D5  ,    32.6D5,  1.D7     ,!Apr
+<      *       -5779.5D2,  10.2D5  ,    15.1D5  ,    35.9D5,  1.D7     ,!May
+<      *       -5779.5D2,  10.1D5  ,    16.0D5  ,    36.7D5,  1.D7     ,!June
+<      *       -5779.5D2,   9.6D5  ,    16.5D5  ,    37.4D5,  1.D7     ,!July
+<      *       -5779.5D2,   9.6D5  ,    15.9D5  ,    36.3D5,  1.D7     ,!Aug
+<      *       -5779.5D2,   9.5D5  ,    16.2D5  ,    37.2D5,  1.D7     ,!Sep
+<      *       -5779.5D2,   9.5D5  ,    15.5D5  ,    36.5D5,  1.D7     ,!Oct
+<      *       -5779.5D2,   9.6D5  ,    15.3D5  ,    34.6D5,  1.D7     ,!Nov
+<      *       -5779.5D2,   9.6D5  ,    15.6D5  ,    33.3D5,  1.D7     /!Dec
+---
+>      * /     -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     /
+>       DATA ((HLAY0(I,J),I=1,5),J=0,9)
+>      * /     -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     ,
+>      *       -1.D0 ,       5.D2  ,      1.D3 ,      1.5D3, 1.D0     /
+6164a6158,6160
+> C  HYDROGEN TARGET  1                   -->  CHECK !!                                                 
+>       DATA ((SE1(I,J),I=1,3),J=1,1)
+>      *                       / 0.472000D+00,-0.426710D-02, 0.726439D-04/
+6554c6550
+< C  PAIR PRODUCTION WITH NITROGEN
+---
+> C  PAIR PRODUCTION WITH HYDROGEN
+6556,6557c6552,6553
+<               TAR = 14.D0
+<             ELSEIF ( RD(1)*SIGPRM .LE. FRPTNO ) THEN
+---
+>               TAR = 1.D0
+>             ELSE
+6561,6564d6556
+<             ELSE
+< C  PAIR PRODUCTION WITH ARGON
+<               LT  = 3
+<               TAR = 40.D0
+6574c6566
+< C  BREMSSTRAHLUNG WITH NITROGEN
+---
+> C  BREMSSTRAHLUNG WITH HYDROGEN
+6576,6577c6568,6569
+<               TAR = 14.D0
+<             ELSEIF ( RD(1)*SIGBRM .LE. FRBTNO ) THEN
+---
+>               TAR = 1.D0
+>             ELSE
+6581,6584d6572
+<             ELSE
+< C  BREMSSTRAHLUNG WITH ARGON
+<               LT  = 3
+<               TAR = 40.D0
+11773,11774c11761,11762
+<         WRITE(MONIOU,*) 'DBRELM: IFAIL=',IFAIL,' E=',EE,' JJMAT=',JJMAT
+<         STOP
+---
+>          WRITE(MONIOU,*) 'DBRELM: IFAIL=',IFAIL,' E=',EE,' JJMAT=',JJMAT
+>          STOP
+13455,13459c13443,13456
+<       CALL DADMUL( DKOKOS,N,AA,B,MINPTS,MAXPTS,
+<      +                EPSPP,WK,IWK,RESULT,RELERR,NFNEVL,IFAIL )
+<       IF ( IFAIL .NE. 0 ) THEN
+<         WRITE(MONIOU,*) 'DPRSGM: IFAIL=',IFAIL,' E=',EE,' JJMAT=',JJMAT
+<         STOP
+---
+>       IF (EE .GE. 0.3D0) THEN
+> #endif
+>          CALL DADMUL( DKOKOS,N,AA,B,MINPTS,MAXPTS,
+>      *                EPSPP,WK,IWK,RESULT,RELERR,NFNEVL,IFAIL )
+> 
+>          IF ( IFAIL .NE. 0 ) THEN
+>            WRITE(MONIOU,*) 'DPRSGM: IFAIL=',IFAIL,' E=',EE,
+>      *               ' JJMAT=',JJMAT
+>            STOP
+>          ENDIF
+>       ELSE
+>          RESULT = 0.D0
+>          RELERR = 0.D0
+>          NFNEVL = 0
+16235,16245c16232
+<       IF     ( ARG .GT. THICKL(2) ) THEN
+<         HEIGH = CATM(1) * LOG( BATM(1) / (ARG - AATM(1)) )
+<       ELSEIF ( ARG .GT. THICKL(3) ) THEN
+<         HEIGH = CATM(2) * LOG( BATM(2) / (ARG - AATM(2)) )
+<       ELSEIF ( ARG .GT. THICKL(4) ) THEN
+<         HEIGH = CATM(3) * LOG( BATM(3) / (ARG - AATM(3)) )
+<       ELSEIF ( ARG .GT. THICKL(5) ) THEN
+<         HEIGH = CATM(4) * LOG( BATM(4) / (ARG - AATM(4)) )
+<       ELSE
+<         HEIGH = (AATM(5) - ARG) * CATM(5)
+<       ENDIF
+---
+>       HEIGH = HLAY(5) - (ARG/0.918D0)
+20521c20508
+<         Z = 7.D0
+---
+>         Z = 1.D0
+20525c20512,20513
+<         Z = 18.D0
+---
+>         WRITE(MONIOU,*) 'MUBREM: WRONG TARGET LT=',LT,' STOP'
+>         STOP
+21218c21206
+<         AATOM  = 14.D0
+---
+>         AATOM  = 1.D0
+21223,21225d21210
+<       ELSEIF ( LT .EQ. 3 ) THEN
+<         AATOM  = 40.D0
+<         SIGOLD = (SIGNUC - FRNTNO) / COMPOS(3)
+21643,21644c21628,21629
+<       DATA             AAIR / 14.D0, 16.D0, 40.D0 /
+<       DATA             ZAIR /  7.D0,  8.D0, 18.D0 /
+---
+>       DATA             AAIR / 1.D0, 16.D0, 40.D0 /
+>       DATA             ZAIR / 1.D0,  8.D0, 18.D0 /
+21646c21631
+<       DATA             CDNS1 / 0.020762D0 /
+---
+>       DATA             CDNS1 / 0.030145D0 /
+21658c21643
+<       CMUON(7)  =  7.D0**OB3
+---
+>       CMUON(7)  =  1.D0**OB3
+21660d21644
+<       CMUON(9)  = 18.D0**OB3
+21665,21666d21648
+<       CMUON(3)  = LOG( 189.D0 * PAMA(5) / (CMUON(9)*PAMA(2)) )
+<      *                   + LOG( TB3/CMUON(9) )
+21670d21651
+<       CMUON(6)  = 189.D0 * SE*PAMA(5)**2/(2.D0*PAMA(2)*CMUON(9))
+21674d21654
+<       CMUON(9)  = CMUON(9) * CMUON(10)
+21686,21687c21666,21667
+< C  MATERIAL LOOP (JJMAT=1: 14N; JJMAT=2: 16O; JJMAT=3: 40AR)
+<       DO  JJMAT = 1, 3
+---
+> C  MATERIAL LOOP (JJMAT=1: 1H; JJMAT=2: 16O)
+>       DO  JJMAT = 1, 2
+21746c21726
+<       DO  JJMAT = 1, 3
+---
+>       DO  JJMAT = 1, 2
+21776c21756
+< C  CALCULATE ENERGY LOSS IN AIR
+---
+> C  CALCULATE ENERGY LOSS IN ICE
+21778c21758
+<  107    FORMAT(' MUPINI: MUON ENERGY LOSS (GEV G**-1 CM**2) FOR AIR',/,
+---
+>  107    FORMAT(' MUPINI: MUON ENERGY LOSS (GEV G**-1 CM**2) FOR ICE',/,
+22075c22055
+< C  (1=N, 2=O, 3=AR)  WHICH WAS SET IN BOX2; RESTORE OLD CROSS-SECTION
+---
+> C  (1=H, 2=O)  WHICH WAS SET IN BOX2; RESTORE OLD CROSS-SECTION
+22077c22057
+<         ZATOM  = 7.D0
+---
+>         ZATOM  = 1.D0
+22082,22084d22061
+<       ELSEIF ( LT .EQ. 3 ) THEN
+<         ZATOM  = 18.D0
+<         SIGOLD = (SIGPRM - FRPTNO) / COMPOS(3)
+26782,26783c26759,26760
+< *-- Author :    The CORSIKA development group   14/07/1995
+< C=======================================================================
+---
+> *-- Author :    The CORSIKA development group   14/07/1995                                                             
+> C=======================================================================                                               
+26787,26797c26764,26774
+< C-----------------------------------------------------------------------
+< C  (DECAYING) P(ARTICLE''S) RANGE
+< C
+< C  DETERMINES MEAN FREE PATH FOR DECAYING PARTICLES
+< C  INCLUDING IONIZATION ENERGY LOSS,
+< C  FOR EACH LAYER OF THE ATMOSOHERE SEPARATELY
+< C  PRECISELY
+< C  THIS SUBROUTINE IS CALLED FROM BOX2.
+< C  ARGUMENT:
+< C   ARG    = -LOG(RANDOM NUMBER) * SPEED OF LIGHT * LIFETIME (CM)
+< C-----------------------------------------------------------------------
+---
+> C-----------------------------------------------------------------------                                               
+> C  (DECAYING) P(ARTICLE''S) RANGE                                                                                      
+> C                                                                                                                      
+> C  DETERMINES MEAN FREE PATH FOR DECAYING PARTICLES                                                                    
+> C  INCLUDING IONIZATION ENERGY LOSS,                                                                                   
+> C  FOR EACH LAYER OF THE ATMOSOHERE SEPARATELY                                                                         
+> C  PRECISELY                                                                                                           
+> C  THIS SUBROUTINE IS CALLED FROM BOX2.                                                                                
+> C  ARGUMENT:                                                                                                           
+> C   ARG    = -LOG(RANDOM NUMBER) * SPEED OF LIGHT * LIFETIME                                                           
+> C-----------------------------------------------------------------------                                               
+26815a26793,26796
+>       integer k,kb
+>       double precision BeGaL,slope,RoMp,Range,RoM(5),BGL(5)
+>       logical first
+>       data first/.true./
+26825,26964c26806,26832
+< C  LOOK WITHIN WHICH LAYER THE PARTICLE STARTS
+<       IF     ( H .LE. HLAY(2) ) THEN
+<         ILAY = 1
+<         TH0  = THICKH
+<       ELSEIF ( H .LE. HLAY(3) ) THEN
+<         ILAY = 2
+<         TH0  = THICKH
+<       ELSEIF ( H .LE. HLAY(4) ) THEN
+<         ILAY = 3
+<         TH0  = THICKH
+<       ELSE
+<         ILAY = 4
+<         TH0  = MAX( THICKH, THICKL(5) )
+<       ENDIF
+< C  SET START VALUES FOR ITERATION
+<       ARG0 = ARG
+<       CHIT = 0.D0
+<       GAM0 = GAMMA
+<       H0   = H
+< #if __UPWARD__
+<       IF ( COSTHE .LT. 0.D0 ) THEN
+<         ILAY = ILAY + 1
+<         ACOSTH = -COSTHE
+<       ELSE
+<         ACOSTH = COSTHE
+<       ENDIF
+< #else
+<       ACOSTH = COSTHE
+< #endif
+< 
+< C- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<   2   CONTINUE
+<       GAM0   = MAX( GAM0, 1.0001D0 )
+<       GAMSQ  = GAM0**2
+<       GMSQM1 = GAMSQ - 1.D0
+< C  ENERGY LOSS BY IONIZATION
+<       IF     ( ITYPE .EQ. 5  .OR.  ITYPE .EQ. 6 ) THEN
+< C  DENSITY EFFECT PARAMETERIZATION (R.P. KOKOULIN, 2006)
+<         CDNS   = CDNS1 * RHOF(H0)
+<         ARGLOG = GMSQM1**2/( (GAM0*C(16)+1.D0)*(1.D0+GMSQM1*CDNS) )
+<         ELOSS  = C(22) * ( GAMSQ * (0.5D0*LOG( ARGLOG )+C(23))
+<      *                                              / GMSQM1 - 1.D0 )
+< C  ADD ENERGY LOSS OF SUBTHRESHOLD BEMSSTRAHLUNG AND PAIRPRODUCTION
+<         AUX2   = CDEDXM( PAMA(5)*GAM0 )
+<         IF ( DEBUG ) WRITE(MDEBUG,*) 'PRANGE: ELOSS,DEDXM=',ELOSS,AUX2
+<         ELOSS  = ELOSS + AUX2
+< #if __CHARM__ || __TAULEP__
+<       ELSEIF ( ITYPE .EQ. 131  .OR.  ITYPE .EQ. 132 ) THEN
+< C  DENSITY EFFECT PARAMETERIZATION (R.P. KOKOULIN, 2006)
+<         CDNS   = CDNS1 * RHOF(H0)
+<         ARGLOG = GMSQM1**2/( (GAM0*C(18)+1.D0)*(1.D0+GMSQM1*CDNS) )
+<         ELOSS  = C(22) * ( GAMSQ * (0.5D0*LOG( ARGLOG )+C(23))
+<      *                                              / GMSQM1 - 1.D0 )
+< C  ADD ENERGY LOSS OF SUBTHRESHOLD BEMSSTRAHLUNG AND PAIRPRODUCTION
+<         AUX2   = CDEDXM( PAMA(131)*GAM0 )
+<         IF ( DEBUG ) WRITE(MDEBUG,*) 'PRANGE: ELOSS,DEDXM=',ELOSS,AUX2
+<         ELOSS  = ELOSS + AUX2
+< #endif
+<       ELSE
+<         ELOSS  = SIGNUM(ITYPE)**2 * C(22) * ( GAMSQ * (LOG( GMSQM1 )
+<      *              - 0.5D0 * LOG( GAM0 * 2.D0 * PAMA(2)/PAMA(ITYPE)
+<      *                           + 1.D0 + (PAMA(2)/PAMA(ITYPE))**2 )
+<      *              + C(23)) / GMSQM1 - 1.D0 )
+<         IF ( DEBUG ) WRITE(MDEBUG,*) 'PRANGE: ELOSS=',ELOSS
+<       ENDIF
+<       ELOS2 = ELOSS / ( PAMA(ITYPE) * ACOSTH )
+< #if __UPWARD__
+<       IF ( ILAY .GT. 4 ) THEN
+<         BK  = ELOS2 * (TH0 - AATM(4))
+<         DK  = GAM0 + BK
+<         AK  = ARG0 * DK * ACOSTH * DATM(4)
+<       ELSE
+<         BK  = ELOS2 * (TH0 - AATM(ILAY))
+<         DK  = GAM0 + BK
+<         AK  = ARG0 * DK * ACOSTH * DATM(ILAY)
+<       ENDIF
+< #else
+<       BK    = ELOS2 * (TH0 - AATM(ILAY))
+<       DK    = GAM0 + BK
+<       AK    = ARG0 * DK * COSTHE * DATM(ILAY)
+< #endif
+<       IF ( AK .GT. 0.D0 ) THEN
+< C  LIMIT FOR EXPONENT AK
+<         IF ( AK .LT. 174.D0 ) THEN
+< C  SEE FZKA 6019, EQ. 4.6
+<           GAMNEW = MAX( GAM0 * DK / ( GAM0 + BK * EXP(AK) ), 1.0001D0 )
+<         ELSE
+<           GAMNEW = 1.0001D0
+<         ENDIF
+< #if __UPWARD__
+<          IF ( COSTHE .GT. 0.D0 ) THEN
+<            GAMK = GAM0 - ELOS2 * (THICKL(ILAY) - TH0)
+<          ELSE
+<            IF ( ILAY .GT. 4 ) THEN
+<              GAMK = GAM0 - ELOS2 * TH0
+<            ELSE
+<              GAMK = GAM0 + ELOS2 * (THICKL(ILAY) - TH0)
+<            ENDIF
+<          ENDIF
+< #else
+<         GAMK   = GAM0 - ELOS2 * ( THICKL(ILAY) - TH0 )
+< #endif
+<       ELSE
+<         GAMK   = 1.D0
+<         GAMNEW = 1.0001D0
+<       ENDIF
+<       IF ( DEBUG ) WRITE(MDEBUG,*) 'PRANGE: GAMNEW,GAMK=',
+<      *                           SNGL(GAMNEW),SNGL(GAMK)
+< C  LOOK WHETHER PARTICLE PENETRATES LAYER BOUNDARY OR DECAYS BEFORE
+<       IF ( GAMNEW .LT. GAMK ) THEN
+< #if __UPWARD__
+<         IF     ( ILAY .LE. 4  .AND.  COSTHE .LT. 0.D0 ) THEN
+< C  CALCULATE PORTION OF RANGE AND NEW START VALUES AT LAYER BOUNDARY
+<           ARG0 = ARG0 - ( H0 - HLAY(ILAY) + CATM(ILAY)*LOG(GAM0/GAMK) )
+<      *                       / (DK * COSTHE)
+<           CHIT = CHIT + (THICKL(ILAY) - TH0) / COSTHE
+<           GAM0 = GAMK
+<           H0   = HLAY(ILAY)
+<           TH0  = THICKL(ILAY)
+<           ILAY = ILAY + 1
+<           GOTO 2
+<         ELSEIF ( ILAY .GT. 1  .AND.  COSTHE .GT. 0.D0 ) THEN
+< #else
+<         IF ( ILAY .GT. 1 ) THEN
+< #endif
+< C  CALCULATE PORTION OF RANGE AND NEW START VALUES AT LAYER BOUNDARY
+<           ARG0 = ARG0 - ( H0 - HLAY(ILAY) + CATM(ILAY)*LOG(GAM0/GAMK) )
+<      *                       / (DK * COSTHE)
+<           CHIT = CHIT + (THICKL(ILAY) - TH0) / COSTHE
+<           GAM0 = GAMK
+<           H0   = HLAY(ILAY)
+<           TH0  = THICKL(ILAY)
+<           ILAY = ILAY - 1
+<           GOTO 2
+<         ENDIF
+<       ENDIF
+< C  PENETRATED MATTER THICKNESS
+<       CHI = CHIT + (GAM0 - GAMNEW) / ( ELOS2 * ACOSTH )
+<       IF ( DEBUG ) WRITE(MDEBUG,445) CHI
+<   445 FORMAT(' PRANGE: CHI = ',1P,E10.3)
+---
+>       CHI=ARG*GAMMA*BETA*0.918D0
+>       if(SIGNUM(ITYPE).eq.0)return ! Do not range out neutrals.                                                              
+> c-- If the charged particle stops in the water then call the distance                                                        
+> c-- the range of the particle.                                                                                               
+>       if(first)then   ! NB for water.                                                                                        
+>          first=.false.! Range/mass due to dEdx losses vs log10(beta*gamma)                                                   
+>          BGL(1)=0.1446d0 ! log10(Beta*Gamma)                                                                                 
+>          RoM(1)=log10(1.955d2)  ! Range/Mass of particle                                                                     
+>          BGL(2)=0.477d0
+>          RoM(2)=log10(7.958d2)
+>          BGL(3)=1.0d0
+>          RoM(3)=log10(4.236d3)
+>          BGL(4)=1.477d0
+>          RoM(4)=log10(1.326d4)
+>          BGL(5)=2.0d0
+>          RoM(5)=log10(4.227d4)
+>       end if
+> Compute particle's range interpolating the above Range/Mass vs Beta*Gamma                                                    
+>       BeGaL=log10(BETA*GAMMA)
+>       do k=2,5
+>         slope=(RoM(k)-RoM(k-1))/(BGL(k)-BGL(k-1))
+>         kb=k
+>         if(BeGaL.lt.BGL(k))go to 1
+>       end do
+>  1        RoMp=RoM(kb)+(slope*(BeGaL-BGL(kb)))
+>       Range=(10**RoMp)*PAMA(ITYPE)
+>       if(CHI.gt.Range)CHI=Range
+27899,27910c27767
+< 
+<       IF     ( ARG .LT. HLAY(2) ) THEN
+<         RHOF = BATM(1) * DATM(1) * EXP( (-ARG) * DATM(1) )
+<       ELSEIF ( ARG .LT. HLAY(3) ) THEN
+<         RHOF = BATM(2) * DATM(2) * EXP( (-ARG) * DATM(2) )
+<       ELSEIF ( ARG .LT. HLAY(4) ) THEN
+<         RHOF = BATM(3) * DATM(3) * EXP( (-ARG) * DATM(3) )
+<       ELSEIF ( ARG .LT. HLAY(5) ) THEN
+<         RHOF = BATM(4) * DATM(4) * EXP( (-ARG) * DATM(4) )
+<       ELSE
+<         RHOF = DATM(5)
+<       ENDIF
+---
+>       RHOF = 0.918D0
+28213c28070
+<           FRACTN = COMPOS(1) * 11.04019D0
+---
+>           FRACTN = COMPOS(1) * 1.D0
+28215c28072
+<           SIGAIR = FRCTNO + COMPOS(3) * 28.69952D0
+---
+>           SIGAIR = FRCTNO + COMPOS(3) * 0.D0
+28219c28076
+< C  INTERACTION WITH NITROGEN
+---
+> C  INTERACTION WITH HYDROGEN
+28221,28222c28078,28079
+<             TAR = 14.D0
+<           ELSEIF ( RD(1)*SIGAIR .LE. FRCTNO ) THEN
+---
+>             TAR = 1.D0
+>           ELSE
+28226,28229d28082
+<           ELSE
+< C  INTERACTION WITH ARGON
+<             LT  = 3
+<             TAR = 40.D0
+28235,28236c28088,28089
+<            TAR = 14.D0
+<         ELSEIF ( LTA .EQ. 2 ) THEN
+---
+>            TAR = 1.D0
+>         ELSE
+28239,28241d28091
+<         ELSEIF ( LTA .EQ. 3 ) THEN
+<           LT = 3
+<           TAR = 40.D0
+28296,28298c28146
+<             TAR = 14.D0
+<           ELSEIF ( N1STTR .EQ. 2 ) THEN
+<             TAR = 16.D0
+---
+>             TAR = 1.D0
+28300c28148
+<             TAR = 40.D0
+---
+>             TAR = 16.D0
+28338c28186
+<             FRACTN = COMPOS(1) * 14.D0 * SIGMA/SIGAIR
+---
+>             FRACTN = COMPOS(1) * 1.D0 * SIGMA/SIGAIR
+28400c28248
+< C  INTERACTION WITH NITROGEN
+---
+> C  INTERACTION WITH HYDROGEN
+28402,28403c28250,28251
+<             TAR = 14.D0
+<           ELSEIF ( RD(1)*SIGAIR .LE. FRCTNO ) THEN
+---
+>             TAR = 1.D0
+>           ELSE
+28407,28410d28254
+<           ELSE
+< C  INTERACTION WITH ARGON
+<             LT  = 3
+<             TAR = 40.D0
+28596c28440
+< C  INTERACTION WITH NITROGEN
+---
+> C  INTERACTION WITH HYDROGEN
+28598,28599c28442,28443
+<             TAR = 14.D0
+<           ELSEIF ( RD(1)*SIGAIR .LE. FRCTNO ) THEN
+---
+>             TAR = 1.D0
+>           ELSE
+28603,28606d28446
+<           ELSE
+< C  INTERACTION WITH ARGON
+<             LT  = 3
+<             TAR = 40.D0
+31562,31572c31402
+<       IF     ( ARG .LT. HLAY(2) ) THEN
+<         THICK = AATM(1) + BATM(1) * EXP( (-ARG) * DATM(1) )
+<       ELSEIF ( ARG .LT. HLAY(3) ) THEN
+<         THICK = AATM(2) + BATM(2) * EXP( (-ARG) * DATM(2) )
+<       ELSEIF ( ARG .LT. HLAY(4) ) THEN
+<         THICK = AATM(3) + BATM(3) * EXP( (-ARG) * DATM(3) )
+<       ELSEIF ( ARG .LT. HLAY(5) ) THEN
+<         THICK = AATM(4) + BATM(4) * EXP( (-ARG) * DATM(4) )
+<       ELSE
+<         THICK = AATM(5) - ARG * DATM(5)
+<       ENDIF
+---
+>       THICK=(HLAY(5)-ARG)*0.918D0
+35265,35288c35095,35099
+<          IF ( MUS ) THEN
+< C  DENSITY EFFECT PARAMETERIZATION (R.P. KOKOULIN, 2006)
+<            CDNS  = CDNS1 * RHOF(HFDNS)
+<            IF ( MT .EQ. 1 ) THEN
+< C  MUON
+<              ARGLOG = GMSQM1**2/((GAM0*C(16)+1.D0)*(1.D0+GMSQM1*CDNS))
+<            ELSE
+< C  TAU LEPTON
+<              ARGLOG = GMSQM1**2/((GAM0*C(18)+1.D0)*(1.D0+GMSQM1*CDNS))
+<            ENDIF
+<            ELOSS = C(22) * ( GAMSQ * (0.5D0*LOG( ARGLOG )+C(23))
+<      *                                              / GMSQM1 - 1.D0 )
+< C  ADD ENERGY LOSS OF SUBTHRESHOLD BEMSSTRAHLUNG AND PAIR PRODUCTION
+<            AUX2  = CDEDXM( PAMA(ITYPE)*GAM0 )
+<            IF (DEBUG) WRITE(MDEBUG,*) 'UPDATE: ELOSS,DEDXM=',ELOSS,AUX2
+<            ELOSS = ELOSS + AUX2
+<          ELSE
+<            ELOSS = SIGNUM(ITYPE)**2 * C(22) * ( GAMSQ * (LOG( GMSQM1 )
+<      *                - 0.5D0 * LOG( GAM0 * 2.D0 * PAMA(2)/PAMA(ITYPE)
+<      *                             + 1.D0 + (PAMA(2)/PAMA(ITYPE))**2 )
+<      *                + C(23)) / GMSQM1 - 1.D0 )
+<            IF (DEBUG) WRITE(MDEBUG,*) 'UPDATE: ELOSS=',ELOSS
+<          ENDIF
+<          ELOS2 = ELOSS / ( PAMA(ITYPE) * ACOSTH )
+---
+>          call Lossy(GAM0,PAMA(ITYPE),ELOSS) ! Sloan version                                                                 
+> c        write(6,*)' GAM0,PAMA,ELOSS=',GAM0,PAMA(ITYPE),ELOSS                                                                
+> c-- Decide to ignore muon bremsstrahlung in water (CDEDXM). Muons                                                            
+> c-- play a small part in showers in high density media such as water.
+> 
+35343,35365c35154
+<           IF ( MUS ) THEN
+<             CDNS  = CDNS1 * RHOF(H)
+<             IF ( MT .EQ. 1 ) THEN
+< C  MUON
+<               ARGLOG = GMSQM1**2/((GAM0*C(16)+1.D0)*(1.D0+GMSQM1*CDNS))
+<             ELSE
+< C  TAU LEPTON
+<               ARGLOG = GMSQM1**2/((GAM0*C(18)+1.D0)*(1.D0+GMSQM1*CDNS))
+<             ENDIF
+< C  ADD ENERGY LOSS OF SUBTHRESHOLD BEMSSTRAHLUNG AND PAIRPRODUCTION
+<             AUX2  = CDEDXM( PAMA(ITYPE)*GAM0 )
+<             IF ( DEBUG ) WRITE(MDEBUG,*)
+<      *                            'UPDATE: ELOSS,DEDXM=',ELOSS,AUX2
+<             ELOSS = ELOSS + AUX2
+<           ELSE
+<             ELOSS = SIGNUM(ITYPE)**2 * C(22) * ( GAMSQ * (LOG( GMSQM1 )
+<      *                - 0.5D0 * LOG( GAM0 * 2.D0 * PAMA(2)/PAMA(ITYPE)
+<      *                             + 1.D0 + (PAMA(2)/PAMA(ITYPE))**2 )
+<      *                + C(23)) / GMSQM1 - 1.D0 )
+<             IF ( DEBUG ) WRITE(MDEBUG,*) 'UPDATE: ELOSS=',ELOSS
+<           ENDIF
+<           CHIT2  = SN * RHOF( H )
+<           GAMMAN = MAX( 1.0001D0, GAM0 - ELOSS * CHIT2 / PAMA(ITYPE) )
+---
+>           call Lossy(GAM0,PAMA(ITYPE),ELOSS) ! Sloan
+38136,38137c37925,37926
+< C  CHECK LPM EFFECT AT ENERGIES ABOVE 10**16 EV
+<       IF ( PEIE .GT. 1.D10 ) THEN
+---
+> C  CHECK LPM EFFECT AT ENERGIES ABOVE 10**12 EV
+>       IF ( PEIE .GT. 1.D6 ) THEN
+38830c38619
+<       DATA             MEDARR / 'AIR-NTP                 ' /
+---
+>       DATA             MEDARR / 'ICE                     ' /
+38887c38676
+<         RHOR(IRL)   = BATM(6-IRL)*HBAROI(IRL)
+---
+>         RHOR(IRL)   = 0.918D0
+38960,38961c38749
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_3.',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_3.ICE',EXIST=LAVAIL)
+38963,38965c38751,38752
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_3.', STATUS='OLD')
+<           WRITE(KMPO,*) 'DATASET EGSDAT6_3. AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_3.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'DATASET EGSDAT5_3.ICE AVAILABLE'
+38970c38757
+<      *      'DATASET EGSDAT6_3. BEST SUITED BUT NOT AVAILABLE'
+---
+>      *      'DATASET EGSDAT5_3.ICE BEST SUITED BUT NOT AVAILABLE'
+38974,38975c38761
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_1.',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_1.ICE',EXIST=LAVAIL)
+38977,38979c38763,38764
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_1.', STATUS='OLD')
+<           WRITE(KMPO,*) 'DATASET EGSDAT6_1. AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_1.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'DATASET EGSDAT5_1.ICE AVAILABLE'
+38984c38769
+<      *      'DATASET EGSDAT6_1. BEST SUITED BUT NOT AVAILABLE'
+---
+>      *      'DATASET EGSDAT5_1.ICE BEST SUITED BUT NOT AVAILABLE'
+38988,38989c38773
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_.4',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_.4.ICE',EXIST=LAVAIL)
+38991,38993c38775,38776
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_.4', STATUS='OLD')
+<           WRITE(KMPO,*) 'DATASET EGSDAT6_.4 AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_.4.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'DATASET EGSDAT5_.4.ICE AVAILABLE'
+38998c38781
+<      *      'DATASET EGSDAT6_.4 BEST SUITED BUT NOT AVAILABLE'
+---
+>      *      'DATASET EGSDAT5_.4.ICE BEST SUITED BUT NOT AVAILABLE'
+39002,39003c38785
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_.25',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_.25.ICE',EXIST=LAVAIL)
+39005,39007c38787,38788
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_.25', STATUS='OLD')
+<           WRITE(KMPO,*) 'DATASET EGSDAT6_.25 AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_.25.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'DATASET EGSDAT5_.25.ICE AVAILABLE'
+39012c38793
+<      *      'DATASET EGSDAT6_.25 BEST SUITED BUT NOT AVAILABLE'
+---
+>      *      'DATASET EGSDAT5_.25.ICE BEST SUITED BUT NOT AVAILABLE'
+39016,39017c38797
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_.15',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_.15.ICE',EXIST=LAVAIL)
+39019,39021c38799,38800
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_.15', STATUS='OLD')
+<           WRITE(KMPO,*) 'DATASET EGSDAT6_.15 AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_.15.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'DATASET EGSDAT5_.15.ICE AVAILABLE'
+39026c38805
+<      *      'DATASET EGSDAT6_.15 BEST SUITED BUT NOT AVAILABLE'
+---
+>      *      'DATASET EGSDAT5_.15.ICE BEST SUITED BUT NOT AVAILABLE'
+39030,39031c38809
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_.05',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_.05.ICE',EXIST=LAVAIL)
+39033,39035c38811,38812
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_.05', STATUS='OLD')
+<           WRITE(KMPO,*) 'DATASET EGSDAT6_.05 AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_.05.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'DATASET EGSDAT5_.05.ICE AVAILABLE'
+39040c38817
+<      *      'DATASET EGSDAT6_.05 BEST SUITED BUT NOT AVAILABLE'
+---
+>      *      'DATASET EGSDAT5_.05.ICE BEST SUITED BUT NOT AVAILABLE'
+39044,39045c38821
+<         INQUIRE(FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//'EGSDAT6_.05',
+<      *          EXIST=LAVAIL)
+---
+>         INQUIRE(FILE='EGSDAT5_.05.ICE',EXIST=LAVAIL)
+39047,39049c38823,38824
+<           OPEN(UNIT=KMPI,FILE=DATDIR(1:INDEX(DATDIR,' ')-1)//
+<      *                        'EGSDAT6_.05', STATUS='OLD')
+<           WRITE(KMPO,*) 'ONLY DATASET EGSDAT6_.05 AVAILABLE'
+---
+>           OPEN(UNIT=KMPI,FILE='EGSDAT5_.05.ICE',STATUS='OLD')
+>           WRITE(KMPO,*) 'ONLY DATASET EGSDAT5_.05.ICE AVAILABLE'
+39052c38827
+<           WRITE(KMPO,*) 'NO DATASET EGSDAT6_????  AVAILABLE'
+---
+>           WRITE(KMPO,*) 'NO DATASET EGSDAT5_????.ICE  AVAILABLE'
+39422,39435c39197,39199
+< C  STERNHEIMER CORRECTION OF DENSITY DEPENDENT IONISATION ENERGY LOSS
+< C  DEDX. SATURATION VALUE OF DEDX AT HIGH ENERGIES IS PRESSURE DEPENDENT
+< C  AND SATURATES AT LOWER VALUES FOR HIGHER PRESSURE. THEREFORE THE
+< C  CROSS-SECTION FILE IS ESTABLISHED WITH GAS PRESSURE OF 1.E-6 ATM
+< C  (CORRESPONDING TO ABOUT 100 KM HIGHT IN ATMOSPHERE). THE CORRECTION
+< C  INTRODUCED GIVES VALUES ABOUT 3% TO HIGH IN TRANSITION REGION TO
+< C  SATURATION. THE PARAMETERISATION IS ONLY VALID FOR U.S. STANDARD ATMOS.
+<         IF ( PEIE .GE. 3.D0 ) THEN
+<           DEDX = RHOFAC * MIN( DEDX0,
+<      *                       (86.65D0-STERNCOR-Z(NP)*8.D-6)*RLDUI )
+<         ELSE
+< C  NO DENSITY DEPENDENT STERNHEIMER CORRECTION AT LOW ENERGIES
+<           DEDX = RHOFAC * DEDX0
+<         ENDIF
+---
+> c All replaced by T.Sloan using PEGS files  3/8/05        
+>         DEDX = RHOFAC * DEDX0
+> 
+39448c39212
+<         ALTEXP = EXP( (-Z(NP)) * HBAROI(IRL) )
+---
+>         ALTEXP = 1.D0
+39450c39214
+<         DISC   = W(NP)*USTEP*HBAROI(IRL)
+---
+>         DISC   = 0.D0
+40217c39981
+<         DISC   = W(NP)*VSTEPU*HBAROI(IRL)
+---
+>         DISC   = 0.D0
+43285c43049
+<       IF ( PEIG .GT. 1.D12 ) THEN
+---
+>       IF ( PEIG .GT. 1.D6 ) THEN
+43689c43453
+<         ALTEXP = EXP( (-Z(NP))*HBAROI(IRL) )
+---
+>         ALTEXP = 1.D0
+43691c43455
+<         DISC   = W(NP)*TSTEP*HBAROI(IRL)
+---
+>         DISC   = 0.D0
+43849c43613
+<       DISC   = W(NP)*USTEPU*HBAROI(IRL)
+---
+>       DISC   = 0.D0
+51744,51745c51508,51509
+< C  AIR TARGET
+<         KK       = 3
+---
+> C  ICE TARGET
+>         KK       = 2
+51748,51749c51512
+<         WCOMP(3) = COMPOS(3)
+<         ACOMP(1) = 14.D0
+---
+>         ACOMP(1) = 1.D0
+51751,51752c51514
+<         ACOMP(3) = 40.D0
+<         ZCOMP(1) = 7.D0
+---
+>         ZCOMP(1) = 1.D0
+51754d51515
+<         ZCOMP(3) = 18.D0
+51758c51519
+<       KK       = 3
+---
+>       KK       = 2
+51761,51762c51522
+<       WCOMP(3) = COMPOS(3)
+<       ACOMP(1) = 14.D0
+---
+>       ACOMP(1) = 1.D0
+51764,51765c51524
+<       ACOMP(3) = 40.D0
+<       ZCOMP(1) =  7.D0
+---
+>       ZCOMP(1) =  1.D0
+51767d51525
+<       ZCOMP(3) = 18.D0
+61548,61550c61306,61308
+<         IF     ( TAR .EQ. 14.D0 ) THEN
+< C  SUM OF PROBABILITIES FOR COLLISION WITH NITROGEN TARGET
+<           DO  JL = 1, 14
+---
+>         IF     ( TAR .EQ. 1.D0 ) THEN
+> C  SUM OF PROBABILITIES FOR COLLISION WITH OXYGEN TARGET
+>           DO  JL = 1, 1
+61552c61310
+<      *             SE14(1,JL) + SE14(2,JL)*DELSIG + SE14(3,JL)*DSIGSQ
+---
+>      *             SE1(1,JL) + SE1(2,JL)*DELSIG + SE1(3,JL)*DSIGSQ
+66217c65975
+<         SIGN = QGSECT(ENUCL,2,IAP,14)
+---
+>         SIGN = QGSECT(ENUCL,2,IAP,1)
+66221c65979
+<         SIGN = SECTNU(ENUCL,IAP,14)
+---
+>         SIGN = SECTNU(ENUCL,IAP,1)
+66224,66225c65982,65983
+< #if !__QGSJETOLD__
+< C  RESPECT LARGER NUCLEAR DENSITY RADIUS FOR OXYGEN
+---
+> #if !__QGSJETOLD__                                                                                                           
+> C  RESPECT LARGER NUCLEAR DENSITY RADIUS FOR OXYGEN                                                                          
+66228a65987
+> 
+66297c66056
+< C  FIRST FOR NITROGEN TARGET
+---
+> C  FIRST FOR HYDROGEN TARGET
+66303c66062
+<           IAT = 14                     ! TARGET
+---
+>           IAT = 1                     ! TARGET
+66344d66102
+< C  THEN  FOR ARGON TARGET
+66346,66361d66103
+< #if __QGSII__
+<           SECTA = SECTA+GSECT(JE,ICZ,6)
+< #else
+<           IAT = 40
+<           YA  = IAT                    ! TARGET
+<           YA  = DLOG( YA ) / 1.38629D0+1.D0
+<           JA  = MIN( INT( YA ), 2 )
+<           WA(2) = YA-JA
+<           WA(3) = WA(2)*(WA(2)-1.D0)*.5D0
+<           WA(1) = 1.D0-WA(2)+WA(3)
+<           WA(2) = WA(2)-2.D0*WA(3)
+<           DO  M = 1, 3
+<             SECTA = SECTA+GSECT(JE,ICZ,JA+M-1)*WA(M)
+<           ENDDO
+< #endif
+<           SECTA  = EXP( SECTA )
+67264a67007,67125
+> C Functions added for WATER                                                                                                  
+> c---------------------------------------------------------------                                                             
+>       subroutine Lossy(GAMMA,AM,dEdx)
+> Computes the value of dEdx fom Bethe-Bloch formula for water including the                                                   
+> c-- density effect. Input gamma and mass of the particle, output=dEdx in                                                     
+> c-- units of GeV per g cm^-2.                                                                                                
+> c-- T.Sloan subroutine   4/5/05.                                                                                             
+>       implicit real * 8(A-H,O-Z)
+>       logical first
+>       save
+>       data first/.true./
+>       if(first)then
+> c -- water from Sternheimer, Berger and Seltzer (Ste84,ref 21-PDG page 252)                                                  
+> c -- This is reference 32 of CORSIKA_PHYSICS.ps.gz                                                                           
+>         Z=10.0d0
+>         A=18.01528d0
+>         AION=7.5d-9*Z  ! I for H2o is 75.0                                                                                   
+>         RHO=1.0d0
+>         CBAR=3.5017d0
+>         X0=0.24d0
+>         X1=2.80d0
+>         AFACT=0.09116d0
+>         SK=3.4773d0
+>         DEL0=0.00d0
+>         AME=0.51099892d-3  ! Electron mass in GeV                                                                            
+>         AK=0.307075d0      ! K in Bethe Bloch formula                                                                        
+>         AKZOA=AK*Z/A
+>         first=.false.
+>       end if
+> c-- Bethe Bloch Formula from the particle data table (eq 27.1 2004 edition). 
+>       GAMsq=GAMMA*GAMMA
+>       BETAsq=(GAMsq-1.0d0)/GAMsq
+>       TMAX=2.0d0*AME*BETAsq*GAMsq/(1.0d0+(2.0d0*GAMMA*AME/AM)
+>      >    +((AME/AM)**2))
+>       ALterm=0.5*log(2.0d0*AME*BETAsq*GAMsq*TMAX/(AION*AION))
+> c-- density effect                                                                                                           
+>       xx=0.5d0*log10(BETAsq*GAMsq)
+>       if(xx.ge.X1)then
+>         delt=((4.605*xx)-CBAR)
+>       elseif(xx.ge.X0.and.xx.lt.X1)then
+>         delt=(4.605*xx)-CBAR+(AFACT*(X1-xx)**SK)
+>       elseif(xx.lt.X0)then
+>         delt=DEL0*(10.0d0**(2.0d0*(xx-X0)))
+>       end if
+>       delb2=delt/2.0d0
+>       dEdx=(AKZOA*(ALterm-BETAsq-delb2)/BETAsq)*1.d-3
+> c-- factor 1.d-3 is to convert to GeV per g cm^-2.                                                                           
+>       if(dEdx.lt.0.0d0)dEdx=0.0d0   ! protect against too low a velocity.                                                    
+>       return
+>       end
+> c----------------------------------------------------------  
+>       subroutine Lossye(EIN,dEdx)
+> Computes the value of dEdx fom Bethe-Bloch formula for electrons in                                                          
+> c  water including the density effect. Input EIN = energy of particle in                                                     
+> c  MeV and output=dE/dx in MeV per gm cm^-2.                                                                                 
+> c---- T.Sloan    27/05/05.                                                                                                   
+>       implicit real * 8(A-H,O-Z)
+>       logical first
+>       save
+>       data first/.true./
+>       if(first)then
+> c -- water from Sternheimer, Berger and Seltzer (Ste84,ref 21-PDG page 252)                                                  
+> c -- This is reference 32 of CORSIKA_PHYSICS.ps.gz (see sternheimer.pdf).
+>         Z=10.0d0
+>         A=18.01528d0
+>         AION=7.5d-9*Z  ! I for H2o is 75.0 10^-9 GeV                                                                         
+>         AIONsq=AION*AION
+>         AIONL=log(AION)
+>         RHO=1.0d0
+>         CBAR=3.5017d0
+>         X0=0.24d0
+>         X1=2.80d0
+>         AFACT=0.09116d0
+>         SK=3.4773d0
+>         DEL0=0.00d0
+>         AME=0.51099892d-3  ! Electron mass in GeV                                                                            
+>         AMEsq=AME*AME
+>         AK=0.307075d0      ! K in Bethe Bloch formula in units of                                                            
+>         AKZOA=AK*Z/A       ! MeV per gm cm^-2                                                                                
+>         pi=3.14159d0
+>         pisq=pi*pi
+>         first=.false.
+>       end if
+> c-- Bethe Bloch Formula from Sternheimer et al formula                                                                       
+>       GAMMA=EIN/(1000.0d0*AME)  ! Working in GeV                                                                             
+>       T=(GAMMA-1.0d0)*AME       ! Kinetic energy.                                                                            
+>       GAMsq=GAMMA*GAMMA
+>       GAMsqm1=GAMsq-1.0d0
+>       BETAsq=GAMsqm1/GAMsq
+>       FBe=(log(AME*T*GAMsqm1/2.d0))-
+>      >(((2.0d0/GAMMA)-1.0d0+BETAsq)*0.6931d0)+(1.d0/GAMsq)
+>      >+(0.125d0*(1.d0-(1.d0/GAMMA))) ! F(beta) for electrons.                                                                
+> c      write(6,*)' GAMMA,T,GAMsq,GAMsqm1,FBe=',                                                                              
+> c     >GAMMA,T,GAMsq,GAMsqm1,FBe                                                                                             
+> c-- density effect
+>       xx=0.5d0*log10(BETAsq*GAMsq)
+>       if(xx.ge.X1)then
+>         delt=((4.605*xx)-CBAR)
+>       elseif(xx.ge.X0.and.xx.lt.X1)then
+>         delt=(4.605*xx)-CBAR+(AFACT*(X1-xx)**SK)
+>       elseif(xx.lt.X0)then
+>         delt=DEL0*(10.0d0**(2.0d0*(xx-X0)))
+>       end if
+> c      delt=0.0d0   ! Switch off density effect.                                                                             
+>       dEdx=(AKZOA/2.d0)*(FBe-(2.d0*AIONL)-delt)/BETAsq
+>       if(dEdx.lt.0.0d0)dEdx=0.0d0   ! protect against too low a velocity.                                                    
+> c-- Rossi's formula                                                                                                          
+> c      al=log(pisq*AMEsq*GAMsq*GAMMA/AIONsq)                                                                                 
+> c      dEdx2=(AKZOA/2.0d0)*(al-2.9)                                                                                          
+> c      dEdx=dEdx1                                                                                                            
+> c      write(6,*)' T=',T,' Ster dEdx=',dEdx1,' Rossi dEdx=',dEdx2                                                            
+>       return
+>       end
+> c------------------------------------------------------------                                                                
+> 
+> 
+> 
+> 
+> 

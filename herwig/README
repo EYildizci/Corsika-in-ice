@@ -1,0 +1,29 @@
+Last update 29/11/2005 by T. Pierog, Ik, FZK, Karlsruhe
+
+HERWIG code available on http://hepwww.rl.ac.uk/theory/seymour/herwig/
+
+You should get the files : herwig<ver>.f, herwig<ver>.inc and HERWIG<ver>.INC
+where <ver> is some version number (last tested 6510).
+
+To compile HERWIG with CORSIKA (nuprim option) (see CORSIKA documentation), you have 
+to do :
+
+* Copy HERWIG<ver>.INC into HERWIG_C.INC : cp HERWIG65.INC HERWIG_C.INC
+
+* Copy herwig<ver>.f into herwig_corsika.f : cp herwig6510.f herwig_corsika.f
+
+* Edit herwig_corsika.f and comment the following functions and subroutines :
+	- FUNCTION HWRGEN(I) (random number generator)
+	- FUNCTION HWRSET(JSEED)      (set seeds for random number generator)
+	- FUNCTION HWRGET(JSEED)      (get seeds from random number generator)
+	- SUBROUTINE PDFSET(PARM,VAL) (dummy)
+	- SUBROUTINE STRUCTM(X,QSCA,UPV,DNV,USEA,DSEA,STR,CHM,BOT,TOP,GLU) (dummy)
+  
+  Rename the common block /JET/ by any other name (like /HWRJET/) (only 1 place) 
+      COMMON/JET/QQN,QQK(250,2),QQP(250,5),QQNC,QQKC(10),QQPC(10,4),
+     *  QQLASTN
+     -->
+      COMMON/HRWJET/QQN,QQK(250,2),QQP(250,5),QQNC,QQKC(10),QQPC(10,4),
+     *  QQLASTN
+
+Then use ./coconut to compile CORSIKA with "nuprim" option.

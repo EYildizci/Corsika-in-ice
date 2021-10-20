@@ -1,0 +1,8 @@
+NEWS with version CORSIKA 7.4xxx are
+  - COAST package is now included in CORSIKA to run directly various options like
+	* CoREAS for radio signal simulations
+	* ROOTOUT to get particles at ground stored in a .root file
+	* INCLINED to save particles reaching an inclined observation plane.
+  - MUONHIST option to save various muon properties at production point in a hbook file.
+
+September 2013

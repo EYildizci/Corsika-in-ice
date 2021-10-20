@@ -1,0 +1,35 @@
+v0.5 26-04-11 by Gevorg Poghosyan (SCC@KIT) and Jurgen Oehlschlaeger (IKP@KIT)
+-many bug fixing
+-consolidation of outputs, no more subfolders/subdirectories will be used
+-reducing unnecessary checks of Runnumbers
+-implementing the preprocessor for generation of ready2run packages to start simulations for given steering input file
+
+v0.4  01-06-11 by Sushant Sharma (Internship at SCC@KIT)
+-Implementing Book-Keeping for runs on local Linux Shells
+-Modification to get rid of 'generation type simulation'.
+
+v0.3  24-11-10 by Gevorg Poghosyan (SCC@KIT)
+-Implementing the new option for type of job submitter
+-Local runs in linux shell as default
+
+v0.2  19-06-10 by Himani Singla, Shenan Kalra (Internship in SCC@KIT)
+ -Adding statistic for job runing time
+
+ v0.1  10-05-10 by Himani Singla, Shenan Kalra (Internship in SCC@KIT)
+
+Main Algorithmic steps:
+1.the run number entered in steering input file will be checked
+2.submitting of initial run will be made using corsika-initial.TYPE.sh
+3.secondary input files will be created by running corsika-secondary.sh
+4.submitting of secondary simulations corsika-secoandary.TYPE.sh to be used 
+
+ToDo: 
+-Additional scripts for more job distributor types: PBS,Grid,BOINC 
+-mpiid regulation to escape conflicts with previous runs in same folder  
+-definition of limits dependng on scheduling systems of computing systems, e.g. maximal possible number of jobs in queue
+
+Aknowledgement:
+Special Thanks to Tanguy Pierog, Dieter Heck and Ralph Engel for contributing their ideas used for development of this algorithms
+
+Reference (please cite when using):
+  Heck,D. et.al; Computational Methods in Science and Engineering (2011), pp 87-90, KIT Scientific Publishing

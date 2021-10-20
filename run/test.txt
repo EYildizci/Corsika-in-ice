@@ -1,0 +1,28 @@
+RUNNR  1
+EVTNR  1
+NSHOW  1
+INFILE pythia_output/infile_00091
+THETAP  0.  0.
+PHIP  -180.  180.
+SEED  1   0   0
+SEED  2   0   0
+SEED  3   0   0
+FIXHEI  1000   0                         first interaction height & target 
+FIXCHI  0.
+OBSLEV  0
+MAGNET  16.4  -53.4
+VOLHEI  1.E4
+HADFLG  0  1  0  1  0  2
+ECUTS   0.3  0.3  0.003  0.003
+MUADDI  T
+MUMULT  T
+ELMFLG  F   F
+STEPFC  1.0
+RADNKG  2.E5
+LONGI   F  20.  F  F
+ECTMAP  1.E4
+MAXPRT  1
+DIRECT  './'
+USER    lulu
+DEBUG   F  6  F  1000000
+EXIT
