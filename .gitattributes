@@ -1,1 +1,2 @@
 /Users/emre/Desktop/RA/Github/Corsika-in-ice/run/qgsdat-II-04 filter=lfs diff=lfs merge=lfs -text
+run/qgsdat-II-04 filter=lfs diff=lfs merge=lfs -text
